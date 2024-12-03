@@ -51,9 +51,9 @@
     "@types/react-native": "~0.71.3",
     "del-cli": "^5.0.0",
     "react": "18.3.1",
-    "react-native": "0.76.1",
+    "react-native": "0.76.3",
     "react-native-builder-bob": "^0.20.4",
-    "react-native-pager-view": "6.4.1",
+    "react-native-pager-view": "6.5.1",
     "react-native-tab-view": "workspace:^",
     "typescript": "^5.3.3"
   },

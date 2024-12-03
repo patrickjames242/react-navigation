@@ -1,5 +1,3 @@
-/* eslint-disable import/no-commonjs */
-
 import { useScrollToTop } from '@react-navigation/native';
 import * as React from 'react';
 import {
@@ -73,7 +71,8 @@ const styles = StyleSheet.create({
   ...Platform.select({
     web: {
       content: {
-        display: 'grid' as 'none',
+        // FIXME: React Native's types for `display` don't include `grid`.
+        display: 'grid' as any,
         gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
       },
       item: {
@@ -85,11 +84,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
       },
+      item: {},
     },
   }),
   photo: {
     flex: 1,
     resizeMode: 'cover',
-    paddingTop: '100%',
+    height: 'auto',
+    width: 'auto',
+    ...Platform.OS === 'web' && {
+      paddingTop: '100%',
+    }
   },
 });
