@@ -43,7 +43,7 @@ jobs:
         if: steps.restore-debug-build.outputs.cache-hit != 'true'
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: '15.4'
 
       - name: Build iOS App
         if: steps.restore-debug-build.outputs.cache-hit != 'true'
