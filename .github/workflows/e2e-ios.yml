@@ -73,7 +73,7 @@ jobs:
           curl -fsSL "https://get.maestro.mobile.dev" | bash
           echo "$HOME/.maestro/bin" >> $GITHUB_PATH
         env:
-          MAESTRO_VERSION: 1.38.1
+          MAESTRO_VERSION: 1.36.0
 
       - name: Boot iOS Simulator
         run: |
@@ -128,9 +128,11 @@ jobs:
       - name: Run Maestro tests
         run: |
           xcrun simctl install booted ../ios-debug-build/ios-debug.app
+          sleep 30
+          maestro --version
           yarn run e2e:native
         env:
-          MAESTRO_DRIVER_STARTUP_TIMEOUT: 120000
+          MAESTRO_DRIVER_STARTUP_TIMEOUT: 240000
         working-directory: example
 
       - name: Store debug output if failed

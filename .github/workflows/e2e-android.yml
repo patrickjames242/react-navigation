@@ -89,7 +89,7 @@ jobs:
           curl -fsSL "https://get.maestro.mobile.dev" | bash
           echo "$HOME/.maestro/bin" >> $GITHUB_PATH
         env:
-          MAESTRO_VERSION: 1.38.1
+          MAESTRO_VERSION: 1.39.9
 
       - name: Enable KVM
         run: |
