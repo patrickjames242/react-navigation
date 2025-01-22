@@ -128,8 +128,6 @@ jobs:
       - name: Run Maestro tests
         run: |
           xcrun simctl install booted ../ios-debug-build/ios-debug.app
-          sleep 30
-          maestro --version
           yarn run e2e:native
         env:
           MAESTRO_DRIVER_STARTUP_TIMEOUT: 240000
